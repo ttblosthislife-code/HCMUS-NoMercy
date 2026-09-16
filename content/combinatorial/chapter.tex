@@ -99,3 +99,40 @@
 			\item ways a convex polygon with $n+2$ sides can be cut into triangles by connecting vertices with straight lines.
 			\item permutations of $[n]$ with no 3-term increasing subseq.
 		\end{itemize}
+\section{Generating Functions}
+	\subsection{q-binomial coefficients}
+		The q-binomial coefficient is defined by
+		\[
+		\genfrac{(}{)}{0pt}{}{m}{r}_{q}
+		=
+		\frac{
+			(1-q^m)(1-q^{m-1})\cdots(1-q^{m-r+1})
+		}{
+			(1-q)(1-q^2)\cdots(1-q^r)
+		}.
+		\]
+
+		Generating function:
+		\[
+		\prod_{k=0}^{n-1}\frac{1}{1-q^k t}
+		=
+		\sum_{k=0}^{\infty}
+		\genfrac{(}{)}{0pt}{}{n+k-1}{k}_{q}
+		t^k.
+		\]
+	\subsection{Lagrange Inversion}
+		If $f(g(x))=x$, then
+		\[
+		k[x^k]g(x)^n
+		=
+		n[x^{-n}]
+		\frac{1}{f(x)^k}
+		\]
+
+		Lagrange-Burmann Equation:
+		\[
+		k[x^k]h(g(x))
+		=
+		[x^{-1}]
+		\frac{h'(x)}{f(x)^k}
+		\]
